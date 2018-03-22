@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -30,10 +31,25 @@ public class FullscreenActivity extends Activity {
         main_videoview = (VideoView) findViewById(R.id.main_videoview);
         main_videoview.setVideoURI(Uri.parse("android.resource://com.example.jiceng.openblog/"+R.raw.video));
         main_videoview.start();
+        main_videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.start();
+                mp.setLooping(true);
+            }
+        });
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        main_videoview.stopPlayback();
     }
 
 
-
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        main_videoview.start();
+    }
 }
