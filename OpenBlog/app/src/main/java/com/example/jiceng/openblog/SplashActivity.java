@@ -29,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.sendEmptyMessageDelayed(0,3000);
     }
     public void getHome(){
-        startActivity(new Intent(this, FullscreenActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 }
