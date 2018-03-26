@@ -1,6 +1,5 @@
 package com.example.jiceng.openblog;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -22,8 +21,10 @@ public class OpenBlogBaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_open_blog_base);
         context = getApplicationContext();
         application = (OpenBlogApplication) this.getApplication();
         appAction = application.getAppAction();
+
     }
 }
