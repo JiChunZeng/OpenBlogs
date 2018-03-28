@@ -1,10 +1,12 @@
-package com.example.jiceng.openblog;
+package com.example.jiceng.openblog.ui;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.example.jiceng.core.AppAction;
+import com.example.jiceng.openblog.OpenBlogApplication;
+import com.example.jiceng.openblog.R;
 
 /**
  * Created by jichunzeng on 2018/3/22.

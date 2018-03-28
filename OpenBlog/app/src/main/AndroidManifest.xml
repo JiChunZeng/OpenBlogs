@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FullscreenActivity"
+            android:name=".ui.FullscreenActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
-            android:name=".OpenBlogBaseActivity"
+            android:name=".ui.OpenBlogBaseActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.MainActivity"></activity>
     </application>
 
 </manifest>

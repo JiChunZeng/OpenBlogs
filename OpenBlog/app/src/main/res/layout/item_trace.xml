@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12月12日"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:text="12日"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:text="18/3"/>
     </LinearLayout>
-        <RelativeLayout
+        <android.support.percent.PercentRelativeLayout
             android:id="@+id/rlTimeline"
             android:layout_width="32dp"
             android:layout_height="match_parent">
@@ -23,48 +30,61 @@
                 android:layout_width="0.5dp"
                 android:layout_height="12dp"
                 android:layout_centerHorizontal="true"
-                android:background="#999" />
+                android:background="#dedede" />
 
             <TextView
                 android:id="@+id/tvDot"
-                android:layout_width="5dp"
-                android:layout_height="5dp"
+                android:layout_width="80px"
+                android:layout_height="80px"
                 android:layout_below="@id/tvTopLine"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/timelline_dot_normal" />
+                android:background="@mipmap/emoji20" />
 
             <TextView
                 android:layout_width="0.5dp"
                 android:layout_height="match_parent"
                 android:layout_below="@id/tvDot"
                 android:layout_centerHorizontal="true"
-                android:background="#999" />
-        </RelativeLayout>
+                android:background="#dedede" />
+        </android.support.percent.PercentRelativeLayout>
 
-        <RelativeLayout
+        <android.support.percent.PercentRelativeLayout
             android:id="@+id/rlCenter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="6dp"
-            android:paddingRight="10dp"
-            android:paddingTop="6dp">
+            android:layout_margin="8dp"
+            >
 
             <TextView
                 android:id="@+id/tvAcceptTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2014/06/24 20:55:28"
                 android:textColor="#999"
+                android:layout_margin="8dp"
                 android:textSize="12sp" />
-
             <TextView
                 android:id="@+id/tvAcceptStation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvAcceptTime"
                 android:layout_marginTop="5dp"
-                android:text="快件在 深圳 ,准备送往下一站 深圳集散中心 [深圳市]"
+                android:layout_margin="8dp"
+                android:ellipsize="end"
+                android:lines="5"
                 android:textColor="#999"
-                android:textSize="12sp" />
-        </RelativeLayout>
+                android:textSize="14sp" />
+             <TextView
+                 android:id="@+id/trace_packup"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/tvAcceptStation"
+                 android:text="展开"
+                 />
+            <com.example.jiceng.openblog.widget.GridListView
+                android:id="@+id/trace_gv"
+                android:layout_below="@id/tvAcceptStation"
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                ></com.example.jiceng.openblog.widget.GridListView>
+        </android.support.percent.PercentRelativeLayout>
 </LinearLayout>

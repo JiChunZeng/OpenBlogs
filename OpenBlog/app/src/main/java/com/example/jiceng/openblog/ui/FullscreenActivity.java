@@ -1,4 +1,4 @@
-package com.example.jiceng.openblog;
+package com.example.jiceng.openblog.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -13,6 +13,8 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.VideoView;
+
+import com.example.jiceng.openblog.R;
 
 /**
  *
