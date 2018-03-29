@@ -69,8 +69,7 @@
                 android:layout_below="@id/tvAcceptTime"
                 android:layout_marginTop="5dp"
                 android:layout_margin="8dp"
-                android:ellipsize="end"
-                android:lines="5"
+
                 android:textColor="#999"
                 android:textSize="14sp" />
              <TextView
@@ -78,11 +77,13 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_below="@id/tvAcceptStation"
+                 android:layout_marginLeft="8dp"
+                 android:visibility="gone"
                  android:text="展开"
                  />
             <com.example.jiceng.openblog.widget.GridListView
                 android:id="@+id/trace_gv"
-                android:layout_below="@id/tvAcceptStation"
+                android:layout_below="@id/trace_packup"
                 android:layout_width="match_parent"
                 android:layout_margin="8dp"
                 ></com.example.jiceng.openblog.widget.GridListView>

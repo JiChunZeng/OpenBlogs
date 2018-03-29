@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -84,24 +85,7 @@ public class TraceListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             tvDot = (TextView) itemView.findViewById(R.id.tvDot);
             trace_packup = itemView.findViewById(R.id.trace_packup);
             gridView = itemView.findViewById(R.id.trace_gv);
-            trace_packup.setOnClickListener(new View.OnClickListener() {
-                Boolean flag = true;
-                @Override
-                public void onClick(View view) {
-                    Log.i("trace_packup",trace_packup.getHeight()+"");
-                    if(flag){
-                        flag = false;
-                        trace_packup.setEllipsize(null); // 展开
-                        trace_packup.setText("收起");
-//                        trace_packup.setSingleLine(flag);
-                    }else{
-                        flag = true;
-                        trace_packup.setEllipsize(TextUtils.TruncateAt.END); // 收缩
-                        trace_packup.setText("展开");
-//                        trace_packup.setSingleLine(flag);
-                    }
-                }
-            });
+
         }
 
         public void bindHolder( Trace trace) {
@@ -115,6 +99,40 @@ public class TraceListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             gridView.setData(date);
             tvAcceptTime.setText(trace.getAcceptTime());
             tvAcceptStation.setText(trace.getAcceptStation());
+
+            tvAcceptStation.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                @Override
+                public boolean onPreDraw() {
+                    //这个回调会调用多次，获取完行数记得注销监听
+                    tvAcceptStation.getViewTreeObserver().removeOnPreDrawListener(this);
+                    if (tvAcceptStation.getLineCount()>5){
+                        trace_packup.setVisibility(View.VISIBLE);
+                        tvAcceptStation.setEllipsize(TextUtils.TruncateAt.END);
+                        tvAcceptStation.setMaxLines(5);
+                    }
+                    return false;
+                }
+            });
+            trace_packup.setOnClickListener(new View.OnClickListener() {
+                Boolean flag = true;
+                @Override
+                public void onClick(View view) {
+                    Log.i("trace_packup",trace_packup.getHeight()+"");
+                    if(flag){
+                        flag = false;
+                        tvAcceptStation.setEllipsize(null); // 展开
+                        trace_packup.setText("收起");
+                        tvAcceptStation.setSingleLine(flag);
+                        tvAcceptStation.setMaxLines(20);
+                    }else{
+                        flag = true;
+                        tvAcceptStation.setEllipsize(TextUtils.TruncateAt.END); // 收缩
+                        trace_packup.setText("展开");
+//                        tvAcceptStation.setSingleLine(flag);
+                        tvAcceptStation.setMaxLines(5);
+                    }
+                }
+            });
         }
     }
 }
