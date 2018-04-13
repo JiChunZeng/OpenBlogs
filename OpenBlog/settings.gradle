@@ -1,1 +1,1 @@
-include ':app', ':api', ':modle', ':core'
+include ':app', ':api', ':modle', ':core', ':calendarview'

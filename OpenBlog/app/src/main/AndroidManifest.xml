@@ -16,15 +16,15 @@
             android:name=".ui.OpenBlogBaseActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
-            android:name=".ui.SplashActivity"
-            android:theme="@style/AppTheme.Splash">
+            android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.MainActivity"
+            ></activity>
     </application>
 
 </manifest>

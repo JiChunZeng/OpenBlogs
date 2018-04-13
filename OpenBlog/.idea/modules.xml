@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/OpenBlog.iml" filepath="$PROJECT_DIR$/OpenBlog.iml" />
       <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calendarview/calendarview.iml" filepath="$PROJECT_DIR$/calendarview/calendarview.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/modle/modle.iml" filepath="$PROJECT_DIR$/modle/modle.iml" />
     </modules>
